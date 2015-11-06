@@ -24,17 +24,15 @@ class SearchController extends Controller
         $find = Input::get('searchForm');
         $findRes;
 
-        $userMatch = User::where('username', 'LIKE', '%' + $find + '%')->get();
-        $hotelMatch = Hotel::where('hotel_name', 'LIKE', '%' + $find + '%')->get();
+        $userMatch = User::where('username', 'LIKE', '%'.$find.'%')->get();
+        $hotelMatch = Hotel::where('hotel_name', 'LIKE', '%'.$find.'%')->get();
         $resrvationMatch;
 
         $data = array(
-            'userMatch'  => compact('userMatch'),
-            'hotelMatch'   => compact('hotelMatch'),
+            'userMatch' => $userMatch,
+            'hotelMatch' => $hotelMatch,
             'reservationMatch' => null
         );
-
-        var_dump($userMatch);
 
         return view('search.results')->with($data);
     }

@@ -15,9 +15,9 @@
     {!! Form::close() !!}
     </br>
 
-    </hr>
 
-    @if(!empty($userMatch))
+
+    @if($userMatch->isEmpty() === false)
 
         <h1>Users</h1>
         <div class="table-responsive">
@@ -29,9 +29,8 @@
                       <th>Email</th>
                     </tr>
                 </thead>
+
               @foreach($userMatch as $user)
-              <?php var_dump($userMatch);
-              die(); ?>
               <tbody>
                     <tr>
                         <td>{{$user->id}}</td>
@@ -41,12 +40,13 @@
                 </tbody>
               @endforeach
             </table>
-        </div>
 
-        </hr>
+    @else
+    @endif
 
+    @if($hotelMatch->isEmpty() === false)
+        
         <h1>Hotels</h1>
-        <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
