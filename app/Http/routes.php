@@ -11,6 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ViewController@showHome');
+
+Route::get('reservations', 'ReservationController@show');
+Route::get('reservations/create', 'ReservationController@create');
+Route::post('reservations', 'ReservationController@store');
+
+Route::get('hotels', 'HotelController@show');
+Route::get('hotels/create', 'HotelController@create');
+Route::post('hotels', 'HotelController@store');
+
+Route::get('users', 'UserController@show');
+Route::get('users/create', 'UserController@create');
+Route::post('users', 'UserController@store');
+
+Route::get('search', 'SearchController@show');
+Route::post('search', 'SearchController@find');
+
+
+Route::get('/contact', 'ViewController@showContact');
+Route::post('/contact', 'ViewController@storeContact');
+
+Route::get('/admin', 'ViewController@showAdmin');
+
+Route::get('/deny', 'ViewController@showDeny');
+
+Route::get('/login', array('uses' => 'ViewController@showLogin'));
+Route::post('/login', array('uses' => 'ViewController@doLogin'));
+
+Route::get('/logout', array('uses' => 'ViewController@doLogout'));
