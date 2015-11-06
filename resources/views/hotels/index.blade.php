@@ -49,27 +49,30 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Nightly Price</th>
-                  <th>Valet</th>
-                  <th>Image</th>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Nightly Price</th>
+                    <th>Valet</th>
+                    <th>Image</th>
                 </tr>
             </thead>
           @foreach($hotels as $hotel)
           <tbody>
                 <tr>
-                  <td>{{$hotel->hotel_id}}</td>
-                  <td>{{$hotel->hotel_name}}</td>
-                  <td>{{$hotel->nightly_price}}</td>
-                  <td>{{$hotel->valet}}</td>
-                  <td>{{$hotel->image_name}}</td>
+                    <td><a href={{ url('hotels/delete/'.$hotel->hotel_id) }}><img src="{{ URL::to('/') }}/icons/delete.png"></a>
+                        <a href={{ url('hotels/update/'.$hotel->hotel_id) }}><img src="{{ URL::to('/') }}/icons/update.png"></a></td>
+                    <td>{{$hotel->hotel_id}}</td>
+                    <td>{{$hotel->hotel_name}}</td>
+                    <td>{{$hotel->nightly_price}}</td>
+                    <td>{{$hotel->valet}}</td>
+                    <td>{{$hotel->image_name}}</td>
                 </tr>
             </tbody>
           @endforeach
         </table>
     </div>
-    
+
     <script language="Javascript" type="text/javascript">
 
         function setInputArea() {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 use App\Hotel;
 use Request;
 
@@ -29,4 +30,23 @@ class HotelController extends Controller
 
         return redirect('hotels');
     }
+
+    public function delete($id){
+
+        DB::table('hotels')->where('hotel_id', '=', $id)->delete();
+
+        return redirect('hotels');
+    }
+
+    public function update(){
+
+        $row = Hotel::find($id);
+        $input = Request::all();
+
+        Hotel::create($input);
+
+        return redirect('hotels');
+    }
+
+
 }
