@@ -272,6 +272,46 @@ body {
 
 #year{display: none;}
 
+.input-group .form-control {
+    float: none;
+}
+
+.input-group-btn{
+    width: inherit;
+}
+
+div[class*='edit'] {
+    display: none;
+    overflow:visible;
+    max-width: 200px;
+}
+
+div[id*='text'] {
+    display: inline;
+
+}
+
+.name_col{
+    min-width: 150px;
+    overflow: visible;
+}
+
+.price_col{
+    min-width: 50px;
+    overflow: visible;
+}
+
+.valet_col{
+    min-width: 25px;
+    overflow: visible;
+}
+
+.img_col{
+    min-width: 100px;
+    overflow: visible;
+}
+
+
 #reveal {
     margin: 0;
     display: none;

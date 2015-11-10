@@ -20,7 +20,7 @@ Route::post('reservations', 'ReservationController@store');
 Route::get('hotels', 'HotelController@show');
 Route::get('hotels/create', 'HotelController@create');
 Route::get('hotels/delete/{id}', 'HotelController@delete');
-Route::post('hotels/update/{id}', 'HotelController@update');
+Route::post('hotels/update/{id}/{col}', 'HotelController@update');
 Route::post('hotels', 'HotelController@store');
 
 Route::get('users', 'UserController@show');

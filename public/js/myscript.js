@@ -89,4 +89,33 @@ $('#isStudent').click(function() {
 });
 
 
+$(document).ready(function () {
+       $('.icon').click(function () {
+         var edit = $(this).siblings('.edit');
+         var text = $(this).siblings('.text');
+        if (edit.css("display") == "none") {
+            edit.css({
+              "display": "inline-table"
+            });
+            text.css({
+              "display": "none"
+            });
+        } else {
+            edit.css({
+              "display": "none"
+            });
+            text.css({
+              "display": "inline"
+            });
+        }
+        return false;
+      });
+    });
+
+
+$("input[placeholder]").each(function () {
+        $(this).attr('size', $(this).attr('placeholder').length);
+});
+
+
 $("#alert").show().delay(1500).fadeOut();

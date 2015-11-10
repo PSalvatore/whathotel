@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
+use \DB;
 use App\Hotel;
 use Request;
+use Input;
 
 class HotelController extends Controller
 {
@@ -38,13 +39,11 @@ class HotelController extends Controller
         return redirect('hotels');
     }
 
-    public function update(){
+    public function update($id, $col){
 
-        $row = Hotel::find($id);
-        $input = Request::all();
-
-        Hotel::create($input);
-
+        $inputs = Request::all();
+        $row = DB::table('hotels')->where('hotel_id', '=', $id)->update([$col => $inputs[$col]]);
+        
         return redirect('hotels');
     }
 
