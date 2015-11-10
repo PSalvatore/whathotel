@@ -6,9 +6,12 @@
             <input type="hidden" name="deletePK">
         </form>
 
-        <a href="reservations/create"><h3>Make Reservation</h3></a>
+        <h1>Reservations 
+            @if(Auth::check() && Auth::user()->username === 'admin')
+                <a href="reservations/create" style="vertical-align: middle"><img src="{{ URL::to('/') }}/icons/Plus_sign.png"></a>
+            @endif
+        </h1>        
 
-        <h1>Reservations</h1>
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>

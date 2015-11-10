@@ -48,9 +48,11 @@
         </form>
     </div>
 
-    <a href="users/create"><h3>Create User</h3></a>
-
-    <h1>Users</h1>
+    <h1>Users 
+        @if(Auth::check() && Auth::user()->username === 'admin')
+            <a href="users/create" style="vertical-align: middle"><img src="{{ URL::to('/') }}/icons/Plus_sign.png"></a>
+        @endif
+    </h1>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>

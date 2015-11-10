@@ -42,9 +42,11 @@
         </form>
     </div>
 
-    <a href="hotels/create"><h3>Add Hotel</h3></a>
-
-    <h1>Hotels</h1>
+    <h1>Hotels 
+        @if(Auth::check() && Auth::user()->username === 'admin')
+            <a href="hotels/create" style="vertical-align: middle"><img src="{{ URL::to('/') }}/icons/Plus_sign.png"></a>
+        @endif
+    </h1>
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
