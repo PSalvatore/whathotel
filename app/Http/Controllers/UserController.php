@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use \DB;
 use Request;
 use Hash;
 
@@ -56,4 +57,26 @@ class UserController extends Controller
             return redirect('users');
         }
     }
+
+    public function delete($id){
+
+        DB::table('users')->where('id', '=', $id)->delete();
+
+        return redirect('users');
+    }
+
+    public function update($id, $col){
+
+        $inputs = Request::all();
+        $row = DB::table('users')->where('id', '=', $id)->update([$col => $inputs[$col]]);
+        
+        return redirect('users');
+    }
 }
+
+
+
+
+
+
+

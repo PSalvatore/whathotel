@@ -27,6 +27,8 @@ Route::post('hotels', 'HotelController@store');
 
 Route::get('users', 'UserController@show');
 Route::get('users/create', 'UserController@create');
+Route::get('users/delete/{id}', 'UserController@delete');
+Route::post('users/update/{id}/{col}', 'UserController@update');
 Route::post('users', 'UserController@store');
 
 Route::get('search', 'SearchController@show');
