@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Reservation;
+use \DB;
 use App\Hotel;
 use Request;
 use Auth;
@@ -34,4 +35,20 @@ class ReservationController extends Controller
 
         return redirect('reservations');
     }
+
+    public function delete($id){
+
+        DB::table('reservations')->where('reservation_id', '=', $id)->delete();
+
+        return redirect('reservations');
+    }
+
+    public function update($id, $col){
+
+        $inputs = Request::all();
+        $row = DB::table('reservations')->where('reservation_id', '=', $id)->update([$col => $inputs[$col]]);
+        
+        return redirect('reservations');
+    }
+
 }
