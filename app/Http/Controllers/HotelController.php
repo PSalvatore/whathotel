@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use \DB;
 use App\Hotel;
 use Request;
-use Input;
 
 class HotelController extends Controller
 {
