@@ -32,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('suggestion', 'Any comments or suggestions?:') !!}
+                {!! Form::label('suggestion', 'Any comments or suggestions?') !!}
                 {!! Form::textarea('suggestion', null, ['class' => 'form-control', 'type' => 'textarea']) !!}
             </div>
 
