@@ -3,9 +3,15 @@
 
         @if(Auth::check())
 
+
             <h1>Make Reservation</h1>
             <hr/>
             {!! Form::open(array('url' => 'reservations')) !!}
+
+            <div class="form-group">
+                {!! Form::label('hotel_id', 'What Hotel? ') !!}
+                {!! Form::select('hotel_id', $hotels, $id, ['class' => 'form-control']) !!}
+            </div>
 
             <div class="form-group">
                 {!! Form::label('nights_qty', 'Number of nights:') !!}
@@ -25,11 +31,6 @@
             <div class="form-group">
                 {!! Form::label('suite', 'Suite (y/n):') !!}
                 {!! Form::text('suite', null, ['class' => 'form-control']) !!}
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('hotel_id', 'What Hotel?: ') !!}
-                {!! Form::select('hotel_id', $hotels, null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">

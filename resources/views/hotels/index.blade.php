@@ -67,6 +67,7 @@
                         </td>
                         <td class="name_col">
                             {!! Form::open(array('url' => 'hotels/update/'.$hotel->hotel_id.'/hotel_name')) !!}
+                            <a href={{ url('reservations/create/'.$hotel->hotel_id) }}><img src="{{ URL::to('/') }}/icons/service_bell.png"></a>
                             <img class="icon" id="icon{{$hotel->hotel_id}}" src="{{ URL::to('/') }}/icons/update.png">
                             <div class="text" id="text1">{{$hotel->hotel_name}}</div>
                             <div class="input-group edit" id="edit1">
@@ -119,7 +120,8 @@
                 @foreach($hotels as $hotel)
                     <tr>
                         <td>{{$hotel->hotel_id}}</td>
-                        <td>{{$hotel->hotel_name}}</td>
+                        <td><a href={{ url('reservations/create/'.$hotel->hotel_id) }}><img src="{{ URL::to('/') }}/icons/service_bell.png"></a>
+                            {{$hotel->hotel_name}}</td>
                         <td>{{$hotel->nightly_price}}</td>
                         <td>{{$hotel->valet}}</td>
                         <td>{{$hotel->image_name}}</td>

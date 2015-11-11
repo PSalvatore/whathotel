@@ -19,11 +19,11 @@ class ReservationController extends Controller
         return view('reservations.index', compact('reservations'));
     }
 
-    public function create(){
+    public function create($id = null){
 
         $hotels = Hotel::lists('hotel_name', 'hotel_id');
 
-        return view('reservations.create', compact('hotels'));
+        return view('reservations.create', compact('hotels', 'id')); 
     }
 
     public function store(){

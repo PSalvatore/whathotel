@@ -15,6 +15,7 @@ Route::get('/', 'ViewController@showHome');
 
 Route::get('reservations', 'ReservationController@show');
 Route::get('reservations/create', 'ReservationController@create');
+Route::get('reservations/create/{id?}', 'ReservationController@create');
 Route::get('reservations/delete/{id}', 'ReservationController@delete');
 Route::post('reservations/update/{id}/{col}', 'ReservationController@update');
 Route::post('reservations', 'ReservationController@store');
