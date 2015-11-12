@@ -56,12 +56,12 @@
       <li><a href={{url('users')}}>Guests</a></li>
       <li><a href={{url('search')}}> Search</a></li>
       <li><a href={{url('contact')}}>Contact</a></li>
-      <li><a>Labs</a>
+      <li><a>Drop Down</a>
         <ul>
-          <li><a href="labs.php">All Labs</a></li>
-          <li><a href="labs.php#lab3">HomePage</a></li>
-          <li><a href=" labs.php#lab4">Javascript</a></li>
-          <li><a href=" labs.php#lab5">Display</a></li>
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+          <li>Option 4</li>
         </ul>
       </li>
       <li><a href="admin">Admin</a></li>

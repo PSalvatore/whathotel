@@ -48,14 +48,13 @@ body {
     background-color: DarkBlue;
     list-style:none;
     padding:0;
-    cursor: pointer;
     margin:0;
     text-align:center;
 }
 
 .myNav li a:link {color:white;}    /* unvisited link */
-.myNav li a:visited {color:orange;}  /* visited link */
-.myNav li a:hover {color:green;}  /* mouse over link */
+.myNav li a:visited {color:white;}  /* visited link */
+.myNav li a:hover {color:red;}  /* mouse over link */
 .myNav li a:active {color:white;}  /* selected link */
 .myNav li{
     border: 2px solid DarkBlue;
@@ -70,6 +69,12 @@ body {
     font-size:18px;
     margin: auto;
     display:inline;
+    cursor: pointer;
+
+}
+
+.myNav a{
+    color: white;
 }
 
 .myNav li selected{
@@ -96,7 +101,7 @@ body {
     z-index: 3;
 }
 
-.myNav.nav li:hover > ul
+.myNav li:hover > ul
 {
     display:block;
 }
