@@ -53,7 +53,7 @@
                                 <td class="start_date_col">
                                     {!! Form::open(array('url' => 'reservations/update/'.$reservation->reservation_id.'/start_date')) !!}
                                     <img class="icon" id="icon{{$reservation->reservation_id}}" src="{{ URL::to('/') }}/icons/update.png">
-                                    <div class="text" id="text1">{{$reservation->start_date}}</div>
+                                    <div class="text" id="text1">{{$reservation->start_date}}</div> 
                                     <div class="input-group edit" id="edit1">
                                         <input type="text" name="start_date" id="start_date" class="form-control" placeholder="{{$reservation->start_date}}">
                                         <span class="input-group-btn">

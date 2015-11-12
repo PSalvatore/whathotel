@@ -30,7 +30,8 @@ class ReservationController extends Controller
 
         $input = Request::all();
         $input['user_id'] = Auth::id();
-
+        $input['start_date'] = date("Y-m-d", strtotime($input['start_date']));
+       
         Reservation::create($input);
 
         return redirect('reservations');
@@ -46,7 +47,16 @@ class ReservationController extends Controller
     public function update($id, $col){
 
         $inputs = Request::all();
-        $row = DB::table('reservations')->where('reservation_id', '=', $id)->update([$col => $inputs[$col]]);
+        // var_dump($inputs);
+        // die();
+
+        if($col === 'start_date'){
+            $row = DB::table('reservations')->where('reservation_id', '=', $id)->update([$col => date("Y-m-d", strtotime($inputs[$col]))]);
+        } 
+        else{
+            $row = DB::table('reservations')->where('reservation_id', '=', $id)->update([$col => $inputs[$col]]);
+        }
+        
         
         return redirect('reservations');
     }
