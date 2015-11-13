@@ -76,7 +76,13 @@ function changeStyle(choice) {
 
 $(document).ready(function() {
     $("button").click(function() {
-        $("#reveal").slideToggle().fadeIn("slow");
+        var reveal = $("#reveal");
+        if (reveal.css("display") == "none") {
+            reveal.slideToggle().fadeIn("slow");
+        }
+        else{
+        reveal.slideToggle().fadeOut("slow");
+        }
     });
 });
 
@@ -90,7 +96,7 @@ $('#isStudent').click(function() {
 
 
 $(document).ready(function () {
-       $('.icon').click(function () {
+       $('.icon.btnAnim').click(function () {
          var edit = $(this).siblings('.edit');
          var text = $(this).siblings('.text');
         if (edit.css("display") == "none") {
@@ -110,7 +116,7 @@ $(document).ready(function () {
         }
         return false;
       });
-    });
+});
 
 
 $("input[placeholder]").each(function () {

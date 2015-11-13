@@ -3,7 +3,7 @@
 
         <button class="btn btn-default btn-sm">About Us</button>
         <br>
-        <p id="reveal"><br> WhatHotel is a site where travelers can connect easily and quickly. Guests staying at a particular
+        <p class="reveal"><br> WhatHotel is a site where travelers can connect easily and quickly. Guests staying at a particular
             hotel can provide information to our database that will allow friends, family, or colleagues
             to meet up with them without a hassle. Members of WhatHotel can also register for their own
             rooms and even request rooms to stay in.</p>

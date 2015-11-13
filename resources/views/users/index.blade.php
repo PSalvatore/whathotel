@@ -3,7 +3,7 @@
 
     <h1>Users 
         @if(Auth::check() && Auth::user()->username === 'admin')
-            <a href="users/create" style="vertical-align: middle"><img src="{{ URL::to('/') }}/icons/Plus_sign.png"></a>
+            <a href="users/create" style="vertical-align: middle"><img class="btnAnim" src="{{ URL::to('/') }}/icons/Plus_sign.png"></a>
         @endif
     </h1>
     <div class="table-responsive">
@@ -19,12 +19,12 @@
                 @if(Auth::check() && Auth::user()->username === 'admin')
                     @foreach($users as $user)
                         <tr>
-                            <td><a href={{ url('users/delete/'.$user->id) }}><img src="{{ URL::to('/') }}/icons/delete.png"></a>
+                            <td><a href={{ url('users/delete/'.$user->id) }}><img class="btnAnim" src="{{ URL::to('/') }}/icons/delete.png"></a>
                                 {{$user->id}}
                             </td>
                             <td class="username_col">
                                 {!! Form::open(array('url' => 'users/update/'.$user->id.'/username')) !!}
-                                <img class="icon" id="icon{{$user->id}}" src="{{ URL::to('/') }}/icons/update.png">
+                                <img class="icon btnAnim" id="icon{{$user->id}}" src="{{ URL::to('/') }}/icons/update.png">
                                 <div class="text" id="text1">{{$user->username}}</div>
                                 <div class="input-group edit" id="edit1">
                                     <input type="text" name="username" id="username" class="form-control" placeholder="{{$user->username}}">
@@ -36,7 +36,7 @@
                             </td>
                             <td class="username_col">
                                 {!! Form::open(array('url' => 'users/update/'.$user->id.'/email')) !!}
-                                <img class="icon" id="icon{{$user->id}}" src="{{ URL::to('/') }}/icons/update.png">
+                                <img class="icon btnAnim" id="icon{{$user->id}}" src="{{ URL::to('/') }}/icons/update.png">
                                 <div class="text" id="text2">{{$user->email}}</div>
                                 <div class="input-group edit" id="edit2">
                                     <input type="text" name="email" id="email" class="form-control" placeholder="{{$user->email}}">

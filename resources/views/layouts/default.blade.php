@@ -56,12 +56,19 @@
       <li><a href={{url('users')}}>Guests</a></li>
       <li><a href={{url('search')}}> Search</a></li>
       <li><a href={{url('contact')}}>Contact</a></li>
-      <li><a>Drop Down</a>
-        <ul>
-          <li>Option 1</li>
-          <li>Option 2</li>
-          <li>Option 3</li>
-          <li>Option 4</li>
+      <li class="drop"><a>Drop Down</a>
+        <ul class="sub-menu">
+          <li><a>Option 1</a></li>
+          <li><a>Option 2</a></li>
+          <li class="drop"><a>Option 3</a>
+            <ul class="sub-menu">
+              <li><a>Option 3.1</a></li>
+              <li><a>Option 3.2</a></li>
+              <li><a>Option 3.3</a></li>
+              <li><a>Option 3.4</a></li>
+            </ul>
+          </li>  
+          <li><a>Option 4</a></li>
         </ul>
       </li>
       <li><a href="admin">Admin</a></li>
