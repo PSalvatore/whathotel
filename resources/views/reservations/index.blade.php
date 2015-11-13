@@ -12,7 +12,8 @@
                 <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Hotel ID</th>
+                      <th>Username</th>
+                      <th>Hotel</th>
                       <th>Nights</th>
                       <th>Start Date</th>
                       <th>Room #</th>
@@ -26,12 +27,24 @@
                                 <td><a href={{ url('reservations/delete/'.$reservation->reservation_id) }}><img class="btnAnim" src="{{ URL::to('/') }}/icons/delete.png"></a>
                                     {{$reservation->reservation_id}}
                                 </td>
-                                <td class="hotel_id_col">
-                                    {!! Form::open(array('url' => 'reservations/update/'.$reservation->reservation_id.'/hotel_id')) !!}
+                                <td class="username_col">   
+                                    {!! Form::open(array('url' => 'users/update/'.$reservation->user_id.'/username')) !!} 
                                     <img class="icon btnAnim" id="icon{{$reservation->reservation_id}}" src="{{ URL::to('/') }}/icons/update.png">
-                                    <div class="text" id="text1">{{$reservation->hotel_id}}</div>
+                                    <div class="text" id="text1">{{$reservation->username}}</div>
                                     <div class="input-group edit" id="edit1">
-                                        <input type="text" name="hotel_id" id="hotel_id" class="form-control" placeholder="{{$reservation->hotel_id}}">
+                                        <input type="text" name="username" id="username" class="form-control" placeholder="{{$reservation->username}}">
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-default">Edit</button>
+                                        </span>
+                                    </div>
+                                    {!! Form::close() !!}
+                                </td>
+                                <td class="hotel_name_col">
+                                    {!! Form::open(array('url' => 'hotels/update/'.$reservation->hotel_id.'/hotel_name')) !!}
+                                    <img class="icon btnAnim" id="icon{{$reservation->reservation_id}}" src="{{ URL::to('/') }}/icons/update.png">
+                                    <div class="text" id="text1">{{$reservation->hotel_name}}</div>
+                                    <div class="input-group edit" id="edit1">
+                                        <input type="text" name="hotel_name" id="hotel_name" class="form-control" placeholder="{{$reservation->hotel_name}}">
                                         <span class="input-group-btn">
                                             <button type="submit" class="btn btn-default">Edit</button>
                                         </span>
@@ -92,7 +105,8 @@
                         @foreach($reservations as $reservation)
                             <tr>
                                 <td>{{$reservation->reservation_id}}</td>
-                                <td>{{$reservation->hotel_id}}</td>
+                                <td>{{$reservation->username}}</td>
+                                <td>{{$reservation->hotel_name}}</td>
                                 <td>{{$reservation->nights_qty}}</td>
                                 <td>{{$reservation->start_date}}</td>
                                 <td>{{$reservation->room_number}}</td>
