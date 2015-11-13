@@ -368,6 +368,9 @@ div[id*='text'] {
     overflow: visible;
 }
 
+#shift-btn{
+    right: 2px;
+}
 
 #reveal {
     margin: 0;

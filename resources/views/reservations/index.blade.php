@@ -28,24 +28,24 @@
                                     {{$reservation->reservation_id}}
                                 </td>
                                 <td class="username_col">   
-                                    {!! Form::open(array('url' => 'users/update/'.$reservation->user_id.'/username')) !!} 
+                                    {!! Form::open(array('url' => 'reservations/update/'.$reservation->reservation_id.'/user_id')) !!} 
                                     <img class="icon btnAnim" id="icon{{$reservation->reservation_id}}" src="{{ URL::to('/') }}/icons/update.png">
                                     <div class="text" id="text1">{{$reservation->username}}</div>
                                     <div class="input-group edit" id="edit1">
-                                        <input type="text" name="username" id="username" class="form-control" placeholder="{{$reservation->username}}">
-                                        <span class="input-group-btn">
+                                        {!! Form::select('user_id', $users, $reservation->user_id, ['class' => 'form-control']) !!}
+                                        <span class="input-group-btn" id="shift-btn">
                                             <button type="submit" class="btn btn-default">Edit</button>
                                         </span>
                                     </div>
                                     {!! Form::close() !!}
                                 </td>
                                 <td class="hotel_name_col">
-                                    {!! Form::open(array('url' => 'hotels/update/'.$reservation->hotel_id.'/hotel_name')) !!}
+                                    {!! Form::open(array('url' => 'reservations/update/'.$reservation->reservation_id.'/hotel_id')) !!}
                                     <img class="icon btnAnim" id="icon{{$reservation->reservation_id}}" src="{{ URL::to('/') }}/icons/update.png">
                                     <div class="text" id="text1">{{$reservation->hotel_name}}</div>
                                     <div class="input-group edit" id="edit1">
-                                        <input type="text" name="hotel_name" id="hotel_name" class="form-control" placeholder="{{$reservation->hotel_name}}">
-                                        <span class="input-group-btn">
+                                        {!! Form::select('hotel_id', $hotels, $reservation->hotel_id, ['class' => 'form-control']) !!}
+                                        <span class="input-group-btn" id="shift-btn">
                                             <button type="submit" class="btn btn-default">Edit</button>
                                         </span>
                                     </div>

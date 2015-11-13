@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Reservation;
 use \DB;
 use App\Hotel;
+use App\User;
 use Request;
 use Auth;
 
@@ -19,11 +20,21 @@ class ReservationController extends Controller
             ->join('users', 'reservations.user_id', '=', 'users.id')
             ->select('reservations.reservation_id', 'users.username', 'hotels.hotel_name', 'reservations.nights_qty',
                      'reservations.start_date', 'reservations.room_number', 'reservations.suite',
-                     'users.id as user_id', 'hotels.hotel_id')
+                     'users.id as user_id', 'hotels.hotel_id as hotel_id')
             ->orderBy('reservation_id', 'asc')
             ->get();
 
-        return view('reservations.index', compact('reservations'));
+        $hotels = Hotel::lists('hotel_name', 'hotel_id');
+
+        $users = User::lists('username', 'id');
+
+        $data = array(
+            'reservations'  => $reservations,
+            'hotels'   => $hotels,
+            'users'   => $users
+        );
+
+        return view('reservations.index')->with($data);
     }
 
     public function create($id = null){
@@ -54,8 +65,7 @@ class ReservationController extends Controller
     public function update($id, $col){
 
         $inputs = Request::all();
-        // var_dump($inputs);
-        // die();
+        var_dump($inputs, $col, $id);
 
         if($col === 'start_date'){
             $row = DB::table('reservations')->where('reservation_id', '=', $id)->update([$col => date("Y-m-d", strtotime($inputs[$col]))]);
