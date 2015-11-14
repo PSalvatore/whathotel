@@ -15,11 +15,19 @@ class ReservationController extends Controller
 {
     public function show(){
 
-        $reservations = DB::table('reservations')
-            ->join('hotels', 'reservations.hotel_id', '=', 'hotels.hotel_id')
+        // $reservationsJOIN = DB::table('reservations')
+        //     ->join('hotels', 'reservations.hotel_id', '=', 'hotels.hotel_id')
+        //     ->join('users', 'reservations.user_id', '=', 'users.id')
+        //     ->select('reservations.reservation_id', 'users.username', 'hotels.hotel_name', 'reservations.nights_qty',
+        //              'reservations.start_date as start_date', 'reservations.room_number', 'reservations.suite',
+        //              'users.id as user_id', 'hotels.hotel_id as hotel_id')
+        //     ->orderBy('reservation_id', 'asc')
+        //     ->get();
+        
+        $reservations = Reservation::join('hotels', 'reservations.hotel_id', '=', 'hotels.hotel_id')
             ->join('users', 'reservations.user_id', '=', 'users.id')
             ->select('reservations.reservation_id', 'users.username', 'hotels.hotel_name', 'reservations.nights_qty',
-                     'reservations.start_date', 'reservations.room_number', 'reservations.suite',
+                     'reservations.start_date as start_date', 'reservations.room_number', 'reservations.suite',
                      'users.id as user_id', 'hotels.hotel_id as hotel_id')
             ->orderBy('reservation_id', 'asc')
             ->get();
