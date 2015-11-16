@@ -64,11 +64,11 @@
                                     {!! Form::close() !!}
                                 </td>
                                 <td class="start_date_col">
-                                    {!! Form::open(array('url' => 'reservations/update/'.$reservation->reservation_id.'/start_date')) !!}
+                                    {!! Form::open(array('url' => 'reservations/update/'.$reservation->reservation_id.'/start_date', 'class' => 'edit_date')) !!}
                                     <img class="icon btnAnim" id="icon{{$reservation->reservation_id}}" src="{{ URL::to('/') }}/icons/update.png">
                                     <div class="text" id="text1">{{$reservation->start_date}}</div> 
                                     <div class="input-group edit" id="edit1">
-                                        <input type="text" name="start_date" id="start_date" class="form-control" placeholder="{{$reservation->start_date}}">
+                                        {!! Form::text('start_date', $reservation->start_date, array('class' => 'form-control datepicker','id' => 'calendar')) !!}
                                         <span class="input-group-btn">
                                             <button type="submit" class="btn btn-default">Edit</button>
                                         </span>

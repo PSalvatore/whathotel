@@ -333,6 +333,11 @@ li .drop:hover > .sub-menu
     float: none;
 }
 
+#calendar {
+    margin-top: 0px;
+}
+
+
 .input-group-btn{
     width: inherit;
 }
