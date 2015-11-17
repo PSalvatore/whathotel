@@ -19,7 +19,7 @@
   @if(Auth::check())
     <div id="topbar">
         <div id="logon">
-            Welcome {{$user->username}} | <a href={{url('logout')}}>Logout</a>
+            Welcome, {{$user->username}} | <a href={{url('logout')}}>Logout</a>
         </div>
         <div id="theme">
             Select theme:&nbsp<select onchange="javascript:changeStyle(this.value)">

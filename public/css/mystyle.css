@@ -305,6 +305,7 @@ li .drop:hover > .sub-menu
     margin-right: auto;
     position: relative;
     display: block;
+    text-align: center;
 }
 
 .table-responsive{
@@ -387,5 +388,5 @@ div[id*='text'] {
 }
 
 #blurb{
-    //float: left;
+    text-align: center;
 }

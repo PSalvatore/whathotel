@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+$('input').attr('autocomplete','off');
+
 function setCookieValue(name, value, days) {
     var expires;
     alert("Adding (to cookie): " + name + " = " + value + "\n\n" + "will last " + days + " days");
