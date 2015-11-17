@@ -173,6 +173,7 @@
     @else
     @endif
 
+<hr>
 
 <!-- SEARCH RESULTS FOR RESERVATION TABLE -->
 
@@ -302,6 +303,11 @@
         </div>
 
     @else
+        @if($userMatch->isEmpty() === false)
+            <h1>There are no reservations for this guest</h1>
+          @else($hotelMatch->isEmpty() === false)
+            <h1>There are no reservations at this hotel</h1>
+          @endif
     @endif
 
 @stop
