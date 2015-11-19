@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-$('input').attr('autocomplete','off');
 
 function setCookieValue(name, value, days) {
     var expires;
@@ -18,17 +17,6 @@ function setCookieValue(name, value, days) {
         expires = "";
     document.cookie = name + "=" + value + expires + "; path=/";
 }
-
-function getTime(){
-    var currentTime = new Date();
-    var month = currentTime.getMonth() + 1;
-    var day = currentTime.getDate();
-    var year = currentTime.getFullYear();
-    var hours = currentTime.getHours();
-    var minutes = currentTime.getMinutes();
-    return "" + year + month + day + hours + minutes;
-}
-
 
 function getCookieValue(name) {
     var nameEQ = name + "=";
@@ -64,38 +52,24 @@ function showWholeCookie() {
 function setTheme() {
     choice = getCookieValue("theme");
     if (choice !== null) {
-        jQuery('#cssLinkID').attr('href', '/css/' + choice);
-        // document.getElementById("cssLinkID").href = '/css/' + choice;
+        jQuery('#cssLinkID').attr('href', '/css/' + choice + '.css');
     }
 }
 
 function changeStyle(choice) {
     // choice is the select list, an object, which has a value property
     // alert ("user choice is " + choice.value);
-    document.getElementById('cssLinkID').href = choice + "?v=" + getTime();
+    jQuery('#cssLinkID').attr('href', '/css/' + choice + '.css');
+    jQuery('#bg_content_top').attr('src', '/images/' + 'BGtop' + choice + '.png');
+    jQuery('#bg_content_left').attr('src', '/images/' + 'left' + choice + '.png');
+    jQuery('#bg_content_right').attr('src', '/images/' + 'right' + choice + '.png');
     setCookieValue("theme", choice, 20);
 }
 
-$(document).ready(function() {
-    $("button").click(function() {
-        var reveal = $("#reveal");
-        if (reveal.css("display") == "none") {
-            reveal.slideToggle().fadeIn("slow");
-        }
-        else{
-        reveal.slideToggle().fadeOut("slow");
-        }
-    });
-});
 
 $(document).ready(function() {
     $("#calendar").datepicker({});
 } );
-
-$('#isStudent').click(function() {
-  $('#year')[this.checked ? "show" : "hide"]();
-});
-
 
 $(document).ready(function () {
        $('.icon.btnAnim').click(function () {
@@ -120,10 +94,15 @@ $(document).ready(function () {
       });
 });
 
+$('#isStudent').click(function() {
+  $('#year')[this.checked ? "show" : "hide"]();
+});
 
 $("input[placeholder]").each(function () {
         $(this).attr('size', $(this).attr('placeholder').length);
 });
 
-
 $("#alert").show().delay(1500).fadeOut();
+
+$('input').attr('autocomplete','off');
+

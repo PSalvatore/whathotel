@@ -1,7 +1,7 @@
 
 body {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
- // background-image: url(http://www.wyndham.com/property/GLSHG/Images/18122_x1.jpg);  /* Pic size:200-300K, but for sure <500K. Put in folder "images" */
+    //background-image: url(http://www.kylehepp.com/wp-content/uploads/2012/10/Hotel-Palauet-Barcelona-13.jpg);  /* Pic size:200-300K, but for sure <500K. Put in folder "images" */
     background-repeat: no-repeat;
     background-size: cover;  /* bg pic will stretch when window is resized */
     background-color: black; /* select color that matches your bg pic */
@@ -15,6 +15,8 @@ body {
     position:relative;
     margin:auto;  /* this means center the container div (itself, not its contents) */
     font-size: 14px;
+    top: 50px;
+    padding-bottom: 50px;
 }
 #title {
     z-index:0;
@@ -173,6 +175,7 @@ li .drop:hover > .sub-menu
     top: 0px;
     z-index: -2;
     width: 100%;
+    overflow: visible;
 }
 
 #bg_content_top{
@@ -276,6 +279,7 @@ li .drop:hover > .sub-menu
     margin-left: 30px;
     text-decoration: none;
 }
+
 #topbar{
     position: absolute;
     z-index: 10;

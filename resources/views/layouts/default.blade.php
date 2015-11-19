@@ -5,14 +5,14 @@
   <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet" type="text/css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel='stylesheet' type='text/css'>
-  <link id="cssLinkID" href="{{ asset('css/mystyle.css?version=1') }}" rel="stylesheet" type="text/css" >
+  <link id="cssLinkID" href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css" >
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>WhatHotel</title>
 </head>
 
 <body onload="setTheme()">
   <div id="top_container">
-    <img id="bg_content_top"  src="http://s12.postimg.org/4ce4k08t9/top.png" width="850" height="161">
+      <img id="bg_content_top" <?php echo "src=/images/BGtop".$_COOKIE['theme'].".png"; ?>  >
   </div>
   <br>
 
@@ -22,10 +22,15 @@
             Welcome, {{$user->username}} | <a href={{url('logout')}}>Logout</a>
         </div>
         <div id="theme">
-            Select theme:&nbsp<select onchange="javascript:changeStyle(this.value)">
-              <option value="mystyle.css"  >Basic</option>
-              <option value="midnight.css" >Midnight</option>
-              <option value="grayscale.css"  >Gray Scale</option>
+            Select theme:&nbsp<select id="theme" name="selected_theme" onchange="javascript:changeStyle(this.value)">
+              
+            <?php
+            $themes = array('Basic','Midnight', 'Grayscale');
+            foreach($themes as $theme){
+            $selected = (isset($_COOKIE['theme'])&&$_COOKIE['theme']==$theme)? 'selected="selected"':'';
+            echo "<option value=\"$theme\"$selected>$theme</option>";
+            } ?>
+
             </select>
         </div>
     </div>
@@ -38,10 +43,15 @@
           <a id="alert"> {{ Session::get('message', '') }}</a>
         @endif
         <div id="theme">
-            Select theme:&nbsp<select onchange="javascript:changeStyle(this.value)">
-              <option value="mystyle.css"  >Basic</option>
-              <option value="midnight.css" >Midnight</option>
-              <option value="grayscale.css"  >Gray Scale</option>
+            Select theme:&nbsp<select id="theme" name="selected_theme" onchange="javascript:changeStyle(this.value)">
+
+            <?php
+            $themes = array('Basic','Midnight', 'Grayscale');
+            foreach($themes as $theme){
+            $selected = (isset($_COOKIE['theme'])&&$_COOKIE['theme']==$theme)? 'selected="selected"':'';
+            echo "<option value=\"$theme\"$selected>$theme</option>";
+            } ?>
+
             </select>
         </div>
     </div>
@@ -79,8 +89,8 @@
 
     <div id="content">
       <div id="bg_mid">
-        <img id="bg_content_left" class="bg_content_sides" src="http://s3.postimg.org/nw4dm64wj/left.png" width="222" height="320">
-        <img id="bg_content_right" class="bg_content_sides" src="http://s11.postimg.org/swq5iljwj/right.png" width="222" height="320">
+        <img id="bg_content_left" <?php echo "src=/images/left".$_COOKIE['theme'].".png"; ?>  >
+        <img id="bg_content_right" <?php echo "src=/images/right".$_COOKIE['theme'].".png"; ?>  >
       </div>
       <div class="selected">
 
