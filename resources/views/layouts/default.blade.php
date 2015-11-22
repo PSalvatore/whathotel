@@ -5,7 +5,7 @@
   <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet" type="text/css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel='stylesheet' type='text/css'>
-  <link id="cssLinkID" href="{{ asset('css/mystyle.css') }}" rel="stylesheet" type="text/css" >
+  <link id="cssLinkID" <?php echo "href=/css/".$_COOKIE['theme'].".css"; ?> rel="stylesheet" type="text/css" >
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>WhatHotel</title>
 </head>

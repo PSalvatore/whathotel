@@ -51,22 +51,20 @@ body {
             transition: all .25s ease;
 }
 .myNav {
-    z-index:2;
-    border: 2px solid DarkBlue;
-    background-color: DarkBlue;
+    z-index:3;
+    background-color: #081016;
     list-style:none;
     padding:0;
     margin:0;
     text-align:center;
+    box-shadow: inset 0 0 10px #000000;
 }
 
-.myNav li a:link {color:white;}    /* unvisited link */
-.myNav li a:visited {color:white;}  /* visited link */
-.myNav li a:hover {color:red;}  /* mouse over link */
+.myNav li a:hover {color:#49DB69;}  /* mouse over link */
 .myNav li a:active {color:white;}  /* selected link */
 .myNav li{
-    border: 2px solid DarkBlue;
-    background-color: DarkBlue;
+    border: 2px solid transparent;
+    background-color: transparent;
     text-align:center;
     padding-left: 10px;
     padding-right: 10px;
@@ -78,9 +76,7 @@ body {
     margin: auto;
     display:inline;
     cursor: pointer;
-
 }
-
 
 .myNav li selected{
     text-align:center;
@@ -113,26 +109,27 @@ body {
 {
     visibility: hidden;
     position:absolute;
-    top:28px;
+    top:23px;
     left:-1px;
     padding-left: 0px;
     padding-right: 10px;
     text-align:left;
-    border: 2px solid darkblue;
-    background-color: DarkBlue;
+    border: 2px solid #081016;
+    background-color: #081016;
     width: 135px;
-    z-index: 3;
+    z-index: 2;
     opacity: 0;
     -webkit-transition: all .25s ease;
        -moz-transition: all .25s ease;
         -ms-transition: all .25s ease;
          -o-transition: all .25s ease;
             transition: all .25s ease;
+    box-shadow: -7px 7px 5px 0px #000000;
 }
 
 .drop:hover > .sub-menu
 {
-    top:31px;
+    top:30px;
     opacity: 1;
     visibility: visible;
 }
@@ -142,6 +139,12 @@ li .drop:hover > .sub-menu
     top:-3px;
     opacity: 1;
     visibility: visible;
+}
+
+
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #081119;
 }
 
 .btnAnim{
@@ -208,8 +211,6 @@ li .drop:hover > .sub-menu
     text-align: left;
 }
 
-.selected a:link {color:pink;}    /* unvisited link */
-.selected a:visited {color:teal;}  /* visited link */
 .selected a:hover {color:black;}  /* mouse over link */
 .selected a:active {color:white;}  /* selected link */
 .selected {
@@ -217,12 +218,13 @@ li .drop:hover > .sub-menu
     padding:15px;
     font: Arial;
     font-size:15px;
-    color: black;
+    color: white;
     z-index:1;
     text-align: left;
-    background-color: beige;
+    background-color: #171D22;
     min-height: 500px;
     overflow: hidden;
+    box-shadow: inset 0 0 20px #000000;
 }
 
 
@@ -291,6 +293,21 @@ li .drop:hover > .sub-menu
     z-index: 10;
     margin-left: 40px;
     color: white;
+}
+
+#logon a{
+    color: #49DB69;
+}
+
+.btn-primary{
+    background-color: #49DB69;
+    border-color: #49DB69;
+    
+}
+
+.btn-primary:hover{
+    background-color: #00771A;
+    border-color: #00771A;
 }
 
 #theme {

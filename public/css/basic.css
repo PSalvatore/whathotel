@@ -51,21 +51,19 @@ body {
 }
 .myNav {
     z-index:2;
-    border: 2px solid DarkBlue;
     background-color: DarkBlue;
     list-style:none;
     padding:0;
     margin:0;
     text-align:center;
+    box-shadow: inset 0 0 17px -4px #000000;
 }
 
-.myNav li a:link {color:white;}    /* unvisited link */
-.myNav li a:visited {color:white;}  /* visited link */
-.myNav li a:hover {color:red;}  /* mouse over link */
+.myNav li a:hover {color:#0685FF;}  /* mouse over link */
 .myNav li a:active {color:white;}  /* selected link */
 .myNav li{
-    border: 2px solid DarkBlue;
-    background-color: DarkBlue;
+    border: 2px solid transparent;
+    background-color: transparent;
     text-align:center;
     padding-left: 10px;
     padding-right: 10px;
@@ -112,7 +110,7 @@ body {
 {
     visibility: hidden;
     position:absolute;
-    top:28px;
+    top:25px;
     left:-1px;
     padding-left: 0px;
     padding-right: 10px;
@@ -127,11 +125,12 @@ body {
         -ms-transition: all .25s ease;
          -o-transition: all .25s ease;
             transition: all .25s ease;
+    box-shadow: -7px 7px 15px 0px rgba(0,0,0,0.58);
 }
 
 .drop:hover > .sub-menu
 {
-    top:31px;
+    top:29px;
     opacity: 1;
     visibility: visible;
 }
@@ -207,8 +206,6 @@ li .drop:hover > .sub-menu
     text-align: left;
 }
 
-.selected a:link {color:pink;}    /* unvisited link */
-.selected a:visited {color:teal;}  /* visited link */
 .selected a:hover {color:black;}  /* mouse over link */
 .selected a:active {color:white;}  /* selected link */
 .selected {
@@ -219,9 +216,10 @@ li .drop:hover > .sub-menu
     color: black;
     z-index:1;
     text-align: left;
-    background-color: beige;
+    background-color: bisque;
     min-height: 500px;
     overflow: hidden;
+    box-shadow: inset 0 0 20px #000000;
 }
 
 
@@ -271,6 +269,21 @@ li .drop:hover > .sub-menu
     text-align: center;
     margin-right: 31%;
     margin-left: 31%;
+}
+
+#logon a{
+    color: #0685FF;
+}
+
+.btn-primary{
+    background-color: #0685FF;
+    border-color: #0685FF;
+
+}
+
+.btn-primary:hover{
+    background-color: #003D78;
+    border-color: #003D78;
 }
 
 #alert{
