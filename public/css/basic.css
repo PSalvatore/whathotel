@@ -309,7 +309,7 @@ li .drop:hover > .sub-menu
     float: right;
     z-index: 10;
     margin-right: 40px;
-    color: white;
+    color: #0685FF;
 }
 
 .submitForm{

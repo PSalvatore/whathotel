@@ -284,6 +284,7 @@ li .drop:hover > .sub-menu
     width: 100%;
 }
 
+
 #logon {
     float: left;
     z-index: 10;
@@ -298,7 +299,7 @@ li .drop:hover > .sub-menu
 .btn-primary{
     background-color: #00D1D1;
     border-color: #00D1D1;
-    
+
 }
 
 .btn-primary:hover{
@@ -310,7 +311,7 @@ li .drop:hover > .sub-menu
     float: right;
     z-index: 10;
     margin-right: 40px;
-    color: white;
+    color: #00D1D1;
 }
 
 .submitForm{
