@@ -40,7 +40,7 @@
             {!! Form::close() !!}
 
         @else
-            <h1>Must be signed in to make a reservation!</h1>
+            <h1 style="text-align: center">Must be signed in to make a reservation!</h1>
         @endif
 
 @stop
