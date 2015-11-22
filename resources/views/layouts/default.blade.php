@@ -81,7 +81,7 @@
           <li><a>Option 4</a></li>
         </ul>
       </li>
-      <li><a href="admin">Admin</a></li>
+      <li><a href={{url('admin')}}>Admin</a></li>
     </ul>
     <div class="newLine"></div>
 

@@ -36,14 +36,14 @@ Route::get('search', 'SearchController@show');
 Route::post('search', 'SearchController@find');
 
 
-Route::get('/contact', 'ViewController@showContact');
-Route::post('/contact', 'ViewController@storeContact');
+Route::get('contact', 'ViewController@showContact');
+Route::post('contact', 'ViewController@storeContact');
 
-Route::get('/admin', 'ViewController@showAdmin');
+Route::get('admin', 'ViewController@showAdmin');
 
-Route::get('/deny', 'ViewController@showDeny');
+Route::get('deny', 'ViewController@showDeny');
 
-Route::get('/login', array('uses' => 'ViewController@showLogin'));
-Route::post('/login', array('uses' => 'ViewController@doLogin'));
+Route::get('login', array('uses' => 'ViewController@showLogin'));
+Route::post('login', array('uses' => 'ViewController@doLogin'));
 
-Route::get('/logout', array('uses' => 'ViewController@doLogout'));
+Route::get('logout', array('uses' => 'ViewController@doLogout'));

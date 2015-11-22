@@ -100,10 +100,10 @@ class ViewController extends BaseController
 
         if(Auth::check() && Auth::user()->email === 'admin@admin.com'){
             $user = Auth::user();
-            return View::make('pages/admin', $user);
+            return view('pages.admin', $user);
         }
         else{
-            return View::make('pages/deny');
+            return view('pages.deny');
         }
     }
 
