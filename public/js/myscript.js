@@ -7,7 +7,7 @@
 
 function setCookieValue(name, value, days) {
     var expires;
-    alert("Adding (to cookie): " + name + " = " + value + "\n\n" + "will last " + days + " days");
+    //alert("Adding (to cookie): " + name + " = " + value + "\n\n" + "will last " + days + " days");
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -38,15 +38,15 @@ function eraseCookieValue(name) {
 function showCookieValue(name) {
     var val = getCookieValue(name);
     if (val === null) {
-        alert("There is no cookie value named '" + name + "'");
+        //alert("There is no cookie value named '" + name + "'");
     }
     else {
-        alert(name + " = " + val);
+        //alert(name + " = " + val);
     }
 }
 
 function showWholeCookie() {
-    alert("whole cookie is " + document.cookie);
+    //alert("whole cookie is " + document.cookie);
 }
 
 function setTheme() {
